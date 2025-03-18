@@ -384,7 +384,7 @@ namespace trac_ik_kinematics_plugin
         solution[z] = out(z);
 
       // check for collisions if a callback is provided
-      if (!solution_callback.empty())
+      if (solution_callback)
       {
         solution_callback(ik_pose, solution, error_code);
         if (error_code.val == moveit_msgs::msg::MoveItErrorCodes::SUCCESS)
